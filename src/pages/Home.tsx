@@ -45,9 +45,47 @@ export default function Home() {
   return (
     <>
         <Nvabar/>
-        <section className=' bg-[url("/love.jpg")] w-full h-screen bg-cover '>
-        </section>
+        <section 
+          className='relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center' 
+          style={{ backgroundImage: 'url("/love.jpg")' }}
+        >
+          <div className='absolute inset-0 bg-black/50 backdrop-brightness-75'></div>
 
+          <div className='relative z-10 max-w-4xl p-6 sm:p-8 space-y-8 text-white'>
+            
+            <h1 className='text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-lg animate-fade-in-up'>
+              Giving Hope, Changing Lives.
+            </h1>
+            
+            <p className='text-lg sm:text-xl md:text-2xl font-medium text-gray-100 leading-relaxed drop-shadow-md animate-fade-in delay-200'>
+              Join us in making a profound difference in the world. Every act of kindness creates a ripple of positive change.
+            </p>
+            
+            <div className='flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 animate-fade-in-up delay-400'>
+              <button
+                className="
+                  px-8 py-4 rounded-full font-bold text-xl uppercase tracking-wider
+                  bg-primary text-primary-foreground shadow-xl
+                  hover:bg-primary/90 hover:shadow-2xl transition-all duration-300
+                  ring-2 ring-transparent hover:ring-white/50
+                "
+              >
+                Donate Now
+              </button>
+              
+              <button
+                className="
+                  px-8 py-4 rounded-full font-bold text-xl uppercase tracking-wider
+                  bg-transparent text-white border-2 border-white shadow-xl
+                  hover:bg-white/20 hover:border-white/80 transition-all duration-300
+                  ring-2 ring-transparent hover:ring-white/50
+                "
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </section>
 
         <section className="h-screen w-full flex flex-col gap-10 items-center justify-center bg-background text-foreground">
           <h1 className="text-5xl font-extrabold text-center tracking-tight text-foreground drop-shadow-lg">
