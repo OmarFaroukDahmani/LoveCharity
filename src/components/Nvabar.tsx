@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
-// ... (Your Link types and arrays remain the same) ...
 type LinkType = {
   src: string;
   title?: string;
@@ -39,7 +38,6 @@ const navLinks: LinkType[] = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // ... (Keep your variants exactly as they were) ...
   const mobileMenuVariants = {
     hidden: { opacity: 0, transition: { when: "afterChildren", staggerChildren: 0.05, staggerDirection: -1 }},
     visible: { opacity: 1, transition: { when: "beforeChildren", staggerChildren: 0.1 }},
@@ -51,10 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Social bar 
-          Uses 'bg-primary' and 'text-primary-foreground' from your CSS.
-          This will be Red/Pink in light mode and Light Pink in dark mode automatically.
-      */}
+
       <div className="hidden md:flex justify-center items-center gap-6 bg-primary text-primary-foreground p-2 transition-colors duration-300">
         {socialLinks.map((link, i) => (
           <a
@@ -62,7 +57,6 @@ export default function Navbar() {
             href={link.src}
             target="_blank" 
             rel="noreferrer"
-            // Using muted/accent colors for hover states
             className="flex items-center gap-2 hover:text-accent transition-colors"
           >
             {link.icon}
@@ -71,12 +65,10 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Top Navbar */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.2 }}
-        // semantic classes: bg-background/30, border-border, shadow-lg
         className="sticky top-0 z-50 w-full flex justify-between items-center p-5 shadow-lg
                    bg-background/60 backdrop-blur-lg border-b border-border"
       >
@@ -84,7 +76,6 @@ export default function Navbar() {
           Love <span className="text-primary">Charity</span>
         </a>
 
-        {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
@@ -99,7 +90,6 @@ export default function Navbar() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Burger Button */}
         <div className="md:hidden flex items-center gap-4">
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -112,7 +102,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -129,7 +118,6 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 400, damping: 40 }}
-              // Uses bg-card and text-card-foreground
               className="fixed top-0 right-0 bottom-0 w-80 max-w-[calc(100vw-40px)] 
                          bg-card text-card-foreground shadow-2xl z-[99] p-6 border-l border-border"
             >

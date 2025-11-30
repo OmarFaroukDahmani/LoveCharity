@@ -225,7 +225,6 @@ export default function Home() {
                   </ul>
                 </div>
                 
-                {/* Stats */}
                 <div className='md:w-2/5 flex flex-col gap-6 md:pl-8 md:border-l border-border'>
                   <motion.div variants={fadeInUp} className='space-y-1'>
                     <h1 className='text-4xl font-extrabold text-primary'>2025</h1>
@@ -461,6 +460,10 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        <footer className="text-center p-6 text-sm text-muted-foreground border-t border-border">
+          © 2025 Love Charity. All rights reserved.
+        </footer>
     </>
   )
 }
