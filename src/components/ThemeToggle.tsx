@@ -41,7 +41,6 @@ export const ThemeToggle = ({ className }: { className?: string }) => {
       onClick={changeTheme}
       className={cn(
         "flex items-center justify-center h-10 w-10 rounded-full transition-all duration-300",
-        // Using semantic border-input and bg-background
         "border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
         "shadow-sm hover:shadow-md", 
         className
