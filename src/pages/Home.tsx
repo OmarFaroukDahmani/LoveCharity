@@ -58,36 +58,36 @@ export default function Home() {
     visible: { 
       y: 0, 
       opacity: 1, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+      transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] as const } 
     }
-  };
+  } as const;
 
   const scaleIn = {
     hidden: { scale: 0.9, opacity: 0 },
     visible: { 
       scale: 1, 
       opacity: 1, 
-      transition: { type: "spring", stiffness: 100, damping: 15 } 
+      transition: { type: "spring" as const, stiffness: 100, damping: 15 } 
     }
-  };
+  } as const;
 
   const slideInLeft = {
     hidden: { x: -50, opacity: 0 },
     visible: { 
       x: 0, 
       opacity: 1, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+      transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] as const } 
     }
-  };
+  } as const;
 
   const slideInRight = {
     hidden: { x: 50, opacity: 0 },
     visible: { 
       x: 0, 
       opacity: 1, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+      transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] as const } 
     }
-  };
+  } as const;
 
   return (
     <>
