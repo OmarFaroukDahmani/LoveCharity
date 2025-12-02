@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -11,7 +12,6 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 type LinkType = {
   src: string;
@@ -87,7 +87,7 @@ export default function Navbar() {
               {link.title}
             </a>
           ))}
-          <ThemeToggle />
+          <AnimatedThemeToggler />
         </div>
 
         <div className="md:hidden flex items-center gap-4">
@@ -155,8 +155,8 @@ export default function Navbar() {
                 <motion.li variants={mobileLinkVariants} className="mt-4 border-t border-border pt-4">
                     <div className="flex items-center justify-between px-4">
                         <span className="text-muted-foreground">Switch Theme</span>
-                        <ThemeToggle />
                     </div>
+                    <AnimatedThemeToggler />
                 </motion.li>
               </motion.ul>
             </motion.div>
